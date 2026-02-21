@@ -17,16 +17,22 @@ function setBalance(value) {
 
 // Machine show Clicked Section only
 function showOnly(id) {
+  const addMoneySection = document.getElementById("add-money-section");
+  const cashoutSection = document.getElementById("cashout-section");
+  const transactionHistory = document.getElementById("transaction-history");
+  const transferMoney = document.getElementById("transfer-money");
+  const getCoupon = document.getElementById("get-bonus-section");
+  const billPayment = document.getElementById("pay-bill-section");
 
-    const addMoneySection = document.getElementById("add-money-section");
-    const cashoutSection = document.getElementById("cashout-section");
-    const transactionHistory = document.getElementById("transaction-history");
-    //hide all section
-    addMoneySection.classList.add("hidden");
-    cashoutSection.classList.add("hidden");
-    transactionHistory.classList.add("hidden");
-    //show only id section
-    const selected = document.getElementById(id);
-    console.log(selected);
-    selected.classList.remove("hidden");
+  //hide all section
+  addMoneySection.classList.add("hidden");
+  cashoutSection.classList.add("hidden");
+  transactionHistory.classList.add("hidden");
+  transferMoney.classList.add("hidden");
+  getCoupon.classList.add("hidden");
+  billPayment.classList.add("hidden");
+  //show only id section
+  const selected = document.getElementById(id);
+  console.log(selected);
+  selected.classList.remove("hidden");
 }

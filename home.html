@@ -89,6 +89,7 @@
       </button>
 
       <button
+        onclick="showOnly('transfer-money')"
         class="btn flex-col h-full py-5 rounded-xl px-3 border-2 focus:bg-slate-300 border-gray-300"
       >
         <img src="./assets/opt-3.png" alt="" />
@@ -98,6 +99,7 @@
       </button>
 
       <button
+        onclick="showOnly('get-bonus-section')"
         class="btn flex-col h-full py-5 rounded-xl focus:bg-slate-300 border-2 border-gray-300"
       >
         <img src="./assets/opt-4.png" alt="" />
@@ -105,13 +107,15 @@
       </button>
 
       <button
+        onclick="showOnly('pay-bill-section')"
         class="btn flex-col h-full py-5 rounded-xl focus:bg-slate-300 border-2 border-gray-300"
       >
         <img src="./assets/opt-5.png" alt="" />
         <p class="text-[#08080885] text-sm font-normal">Pay Bill</p>
       </button>
 
-      <button onclick="showOnly('transaction-history')"
+      <button
+        onclick="showOnly('transaction-history')"
         class="btn flex-col h-full py-5 rounded-xl focus:bg-slate-300 border-2 border-gray-300"
       >
         <img src="./assets/opt-6.png" alt="" />
@@ -231,6 +235,53 @@
         </div>
       </div>
     </section>
+    <!-- Transfer Money Section  -->
+    <section
+      id="transfer-money"
+      class="hidden w-11/12 mx-auto pt-8 pb-6 space-y-3"
+    >
+      <h3 class="font-semibold text-xl mt-4">Transfer Money</h3>
+      <div class="card bg-base-100 w-full shadow rounded-3xl">
+        <div class="card-body">
+          <fieldset class="fieldset">
+            <label class="label text-neutral font-bold mb-3"
+              >User Account Number</label
+            >
+            <input
+              id="user-number"
+              maxlength="11"
+              minlength="11"
+              type="text"
+              class="mb-4 w-full input bg-base-200 rounded-full"
+              placeholder="Enter 11 digit number"
+            />
+            <label class="label text-neutral font-bold mb-3">Amount</label>
+            <input
+              id="transfer-amount"
+              type="number"
+              class="mb-4 w-full input bg-base-200 rounded-full"
+              placeholder="Enter amount to transfer"
+            />
+
+            <label class="w-full label text-neutral font-bold mb-3"
+              >Pin Number</label
+            >
+            <input
+              id="transfer-pin"
+              maxlength="4"
+              minlength="4"
+              type="password"
+              class="mb-4 w-full input bg-base-200 rounded-full"
+              placeholder="Enter 4 Digit Pin Number"
+            />
+
+            <button id="transfer-btn" class="btn btn-primary mt-4 rounded-full">
+              Send Now
+            </button>
+          </fieldset>
+        </div>
+      </div>
+    </section>
 
     <!-- Transaction History Section -->
     <section
@@ -238,12 +289,105 @@
       class="w-11/12 mx-auto pt-8 pb-6 hidden space-y-3"
     >
       <h3 class="font-semibold text-xl mt-4">Transaction History</h3>
-      <div id="history-container" class="space-y-5">
+      <div id="history-container" class="space-y-5"></div>
+    </section>
+    <!-- Get Bonus section -->
+    <section
+      id="get-bonus-section"
+      class="hidden w-11/12 mx-auto pt-8 pb-6 space-y-3"
+    >
+      <h3 class="font-semibold text-xl mt-4">Get Bonus</h3>
+      <div class="card bg-base-100 w-full shadow rounded-3xl">
+        <div class="card-body">
+          <fieldset class="fieldset">
+            <label class="label text-neutral font-bold mb-3"
+              >Enter Bonus Coupon</label
+            >
+            <input
+              id="get-bonus-coupon"
+              type="text"
+              class="mb-4 w-full input bg-base-200 rounded-full"
+              placeholder="Enter your coupon(EID500)"
+            />
+            <button
+              id="get-bonus-btn"
+              class="btn btn-primary mt-4 rounded-full"
+            >
+              Get Bonus
+            </button>
+          </fieldset>
+        </div>
+      </div>
+    </section>
 
+    <!-- Pay Bill Section -->
+    <section
+      id="pay-bill-section"
+      class="hidden w-11/12 mx-auto pt-8 pb-6 space-y-3"
+    >
+      <h3 class="font-semibold text-xl mt-4">Pay Bill</h3>
+      <div class="card bg-base-100 w-full shadow rounded-3xl">
+        <div class="card-body">
+          <fieldset class="fieldset">
+            <label class="label text-neutral font-bold mb-3"
+              >Select To Pay</label
+            >
+            <select
+              id="biller-name"
+              class="select mb-4 w-full input bg-base-200 rounded-full"
+            >
+              <option disabled selected>Select Biller Name</option>
+              <option value="WASA">WASA</option>
+              <option value="TITAS">TITAS</option>
+              <option value="DESCO">DESCO</option>
+              <option value="AKASH">AKASH</option>
+            </select>
+
+            <label class="label text-neutral font-bold mb-3"
+              >Biller Account Number</label
+            >
+            <input
+              id="biller-number"
+              maxlength="11"
+              minlength="11"
+              type="text"
+              class="mb-4 w-full input bg-base-200 rounded-full"
+              placeholder="Enter account number"
+            />
+            <label class="label text-neutral font-bold mb-3"
+              >Amount to Pay</label
+            >
+            <input
+              id="bill-amount"
+              type="number"
+              class="mb-4 w-full input bg-base-200 rounded-full"
+              placeholder="Add Amount to pay"
+            />
+
+            <label class="w-full label text-neutral font-bold mb-3"
+              >Pin Number</label
+            >
+            <input
+              id="bill-pin"
+              maxlength="4"
+              minlength="4"
+              type="password"
+              class="mb-4 w-full input bg-base-200 rounded-full"
+              placeholder="Enter 4 Digit Pin Number"
+            />
+
+            <button id="bill-btn" class="btn btn-primary mt-4 rounded-full">
+              Pay Now
+            </button>
+          </fieldset>
+        </div>
       </div>
     </section>
     <script src="./scripts/machine.js"></script>
     <script src="./scripts/addMoney.js"></script>
     <script src="./scripts/cashout.js"></script>
+    <script src="./scripts/transfer.js"></script>
+    <script src="./scripts/bonus.js"></script>
+    <script src="./scripts/payBill.js"></script>
   </body>
 </html>
